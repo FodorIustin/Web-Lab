@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 4</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      .text-menu {
+        font-weight:bold;
+      }
+
+      .content-width {
+        width: 2 rem;
+        height: 2rem;
+      }
+
+      .menu-height {
+        height: 2rem;
+        margin-top: 2rem;
+      }
+      .menu-height2{
+        height:50%;
+      }
+      .container-height {
+        height: 20rem;
+      }
+      .thirdSlide-height{
+        height: 7rem;
+      }
+      .last-slide-height{
+        height:15rem;
+      }
+      .image-size{
+        width:10rem;
+        height:10rem;
+      }
+      .main-height{
+        height: 42rem;
+      }
+      .vertical-line {
+        border-left: 1px solid rgba(0, 0, 0, 0.2); /* Set the color and thickness as needed */
+        height: 70%; /* Adjust the height as needed */
+         position: absolute;
+         top: 10;
+        left: 33%; /* Adjust the left position to control where the line appears */
+       /* Center the line horizontally */
+}
+.vertical-line2{
+     
+        border-left: 1px solid rgba(0, 0, 0, 0.2); /* Set the color and thickness as needed */
+        height: 70%; /* Adjust the height as needed */
+         position: absolute;
+         top: 10;
+        left: 66%; /* Adjust the left position to control where the line appears */
+       /* Center the line horizontally */
+}
+    .font-text{
+      font-size: 1.5rem;
+    }
+    .gray-circle {
+            width: 70px;
+            height: 70px;
+            background-color: gray;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .mlc{
+          margin-left: 40px;
+          margin-bottom: 20px;;
+          margin-top: 15px;
+        }
+        .marginss{
+          margin-top:132px;
+        }
+        .smaller-circle{
+          width: 35px;
+            height: 35px;
+            background-color: gray;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .last-margin{
+          margin-top: 50px;
+          margin-left:30px;
+        }
+        .rectangle {
+            margin: 5px; /* Margin around the rectangle */
+            height: 30px; /* Adjust the height as needed */
+        }
+
+        /* Add a grey border to the first rectangle */
+        .rectangle-with-border {
+            border: 1px solid grey;
+            background-color: white;
+        }
+        .mapss{
+          padding:150px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>First BootStrap Project</h1> -->
+
+    <!-- <div class="d-flex flex-row justify-content-between">
+        <div class="bg-danger-subtle">
+            SubContainer1
+        </div>
+        <div class="bg-body-secondary">
+            SubContainer2
+        </div>
+        <div class="bg-info">
+            SubContainer3
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">C1</div>
+            <div class="col">C2</div>
+            <div class="col">C3</div>
+            <div class="col">C4</div>
+        </div>
+    </div> -->
+
+    <div>
+     
+
+     <div>
+        <!-- menu -->
+        <div class="row">
+          <div class="col d-flex flex-row-reverse menu-height justify-content-between">
+            <div class="d-flex flex-end">
+              <div class="mx-3 text-menu">HOME</div>
+              <div class="mx-3">WHO WE ARE</div>
+              <div class="mx-3">WHAT WE DO</div>
+              <div class="mx-3">OUR WORK</div>
+              <div class="mx-3">BLOG</div>
+              <div class="mx-3">LETS TALK</div>
+            </div>
+          </div>
+        </div>
+        <div><hr class="my-5" /></div>
+        
+       <!-- first row-->
+        <div class="row">
+         
+          <div class="col d-flex container-height justify-content-around align-items-center">
+            <div class="vertical-line"></div>
+            <div class="vertical-line2"></div>
+            <div class="text-menu">STRATEGY</div>
+            <div class="text-menu">DESIGN</div>
+            <div class="text-menu">TECHNOLOGY</div>
+          </div>
+          <div><hr class="my-5" /></div>
+        </div>
+        
+        <!--Text Section-->
+
+        <div class="row">
+
+          <div class="col d-flex thirdSlide-height flex-column menu-height align-items-center ">
+            <div class="text-menu ">Building brands for good</div>
+            <div class="">We cultivate fresh ideas to help create a sustainable</div>
+            <div>and consistent brand for your business</div>
+          </div>
+          
+        </div>
+        <!--Main Slide-->
+        <div class="row">
+          <div class="col d-flex main-height">
+            <div class="flex-grow-1 border">
+              <div class="border text-menu align-items-center d-flex justify-content-center menu-height2 font-text">OUR WORK</div>
+
+              <div class="d-flex align-items-center flex-column justify-content-center menu-height2">
+                <div class="text-menu font-text p-2">LET'S CREATE SOME-</div>
+                <div>THING TOGETHER</div>
+                <div>Lorem ipsum dolor sit amet, consectetur</div>
+                <div>adipiscing elit. Etiam vitae tincidunt.</div>
+                <div class="">Vestibulum ante ipsum primis.</div>
+                <div class="mt-5 p-3 border">RSVP</div>
+              </div>
+            </div>
+
+             <div class="flex-grow-1 border">
+              <div class="text-menu my-5 mx-5 font-text">OUR SERVICES</div>
+            <div class="d-flex flex-row">
+
+              <div class="gray-circle rounded-circle mlc"> </div> 
+              <div class="d-flex align-items-center mx-3 text-menu">Branding</div>
+            </div> 
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"> </div>
+              <div class="d-flex align-items-center mx-3 text-menu">Print Design</div>
+            
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Email Marketing</div>
+            
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Infographics</div>
+             
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Copywriting</div>
+              </div>
+
+              <!--Third Main Menu part-->
+             </div>
+             <div class="flex-grow-1 border">
+              
+            <div class="d-flex flex-row marginss">
+
+              <div class="gray-circle rounded-circle mlc"> </div> 
+              <div class="d-flex align-items-center mx-3  text-menu">Web Design</div>
+            </div> 
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"> </div>
+              <div class="d-flex align-items-center mx-3 text-menu">eCommerce</div>
+            
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Organic SEO</div>
+            
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Social Media</div>
+             
+            </div>
+
+            <div class="d-flex flex-row">
+             <div class="gray-circle rounded-circle mlc"></div>
+              <div class="d-flex align-items-center mx-3 text-menu">Traffic Analysis</div>
+              </div>
+             </div>
+            
+          </div>
+
+       
+        </div>
+
+        <!--Last Slide-->
+        <div class="row">
+          <div class="col d-flex last-slide-height">
+
+            <div class="flex-grow-1 last-margin">
+              <div class="text-menu">Fresh tips, straight to your inbox</div>
+              <div>Sign up to receive tips on how to better engage</div>
+              <div>your customers, enhance your website, and</div>
+              <div> establish consistent branding.</div>
+              <div class="d-flex flex-row">
+
+                <div class="col-md-6">
+                  <div class="rectangle rectangle-with-border">
+                  </div>
+              </div>
+              <div class="col-md-2">
+                <div class="rectangle" style="background-color: grey;">
+                </div>
+            </div>
+
+              </div>
+            </div>
+
+            <div class="flex-grow-1 last-margin">
+              <div class="text-menu">Follow our insightful chatter</div>
+              <div class="">We keep up with the latest and greatest trends</div>
+              <div class="">in technology, social media and design. Connect</div>
+              <div class="">with us to have your ideas and insight.</div>
+              <div class="d-flex flex-row">
+                <div class="gray-circle rounded-circle smaller-circle mx-1"></div>
+                <div class="gray-circle rounded-circle smaller-circle mx-1"></div>
+                <div class="gray-circle rounded-circle smaller-circle mx-1"></div>
+                <div class="gray-circle rounded-circle smaller-circle mx-1"></div>
+              </div>
+            </div>
+
+
+            <div class="flex-grow-1 mapss border d-flex align-items-center justify-content-center">
+              <div class="text-menu">map</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>
