@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind curs4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          fontSize: {
+            xsm: "0.8rem",
+            xxl: "2rem",
+            xl: "2rem",
+            sm: "1rem",
+            xs: "1rem",
+          },
+          backgroundImage: {
+            casa1: "url('pictures/bridges-12.jpg')",
+            casa2: "url('pictures/images.jpeg')",
+            casa3: "url('pictures/flat.jpg')",
+          },
+        },
+      };
+    </script>
+  </head>
+  <!-- Header -->
+  <body class="bg-green-100">
+    <div class="container mx-auto px-9">
+      <div class="flex justify-between mb-5 mx-5">
+        <div class="flex flex-col">
+          <h1 class="text-xxl font-bold">Inside story of our</h1>
+        <h1 class="text-xxl font-bold">company.</h1>
+        </div>
+        <div class="flex text-xs items-center">
+          <div class="px-2 hover:bg-black hover:text-white">Go to Blog</div>
+                </div>
+      </div>
+
+      <!-- Content -->
+      <div class="grid grid-flow-col gap-8 px-5">
+        <div class="flex flex-col bg-white" style="width:16rem;">
+          <div class="relative h-48">
+            <div class="bg-casa1 absolute inset-0 m-4 bg-cover"></div>
+          </div>
+          
+          <div class="text-sm font-bold pt-2 px-2 ">
+            <div class="inline hover:bg-orange-500 hover:text-black">Technology</div>
+          </div>
+          <div class="text-sm font-bold pt-2 px-2">A Discount Cartridge dsu is Better Ever.</div>
+          <div></div>
+          <div class="text-xl px-2 pb-2 flex justify-between">
+            <div><i class="bi bi-arrow-right"></i></div>
+            
+          </div>
+        </div>
+        <div class="flex flex-col bg-white" style="width:17rem;">
+          <div class="relative h-48">
+            <div class="bg-casa2 absolute inset-0 m-4 bg-cover"></div>
+          </div>
+          <div class="text-sm font-bold pt-2 px-2">
+            <div class="inline hover:bg-blue-200 hover:text-black">Design</div>
+          </div>
+          <div class="text-sm font-bold pt-2 px-2">Good design is the key of business</div>
+          <div class="text-xl px-2 pb-2 flex justify-between">
+            <div><i class="bi bi-arrow-right"></i></div>
+            
+          </div>
+        </div>
+        <div class="flex flex-col bg-white" style="width:15rem;">
+          <div class="relative h-48">
+            <div class="bg-casa3 absolute inset-0 m-4 bg-cover"></div>
+          </div>
+          <div class="text-sm font-bold pt-2 px-2">
+            <div class="inline hover:bg-pink-200 hover:text-black">Support</div>
+          </div>
+          <div class="text-sm font-bold pt-2 px-2">Client satisfaction is the goal of business success.</div>
+          <div class="text-xl  px-2 pb-2 flex justify-between">
+            <div><i class="bi bi-arrow-right"></i></div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
