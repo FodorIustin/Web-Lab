@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+  .box {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    margin: 1rem;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+
+  
+</style>
+</head>
+
+<body>
+<div id="app">
+ 
+  <div v-for="(row, rowIndex) in grid" :key="rowIndex" class="row">
+    <div v-for="(color, colIndex) in row" :key="colIndex" class="box" :style="{ backgroundColor: color }">
+      {{ color }}
+    </div>
+  </div>
+  <div><button @click="generateRandomColors">Random Colors</button></div> 
+</div>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        grid: this.createGrid(),
+      };
+    },
+    methods: {
+      getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      },
+      createGrid() {
+        const grid = [];
+        for (let i = 0; i < 2; i++) {
+          const row = Array.from({ length: 7 }, () => this.getRandomColor());
+          grid.push(row);
+        }
+        return grid;
+      },
+      generateRandomColors() {
+        this.grid = this.createGrid();
+      },
+    },
+  });
+
+  app.mount('#app');
+</script>
+</body>
+</body>
+</html>
