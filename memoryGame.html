@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Color Game</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <game-board></game-board>
+  </div>
+
+  <script>
+    // MemorySquare component
+    const MemorySquare = {
+      props: ['color', 'row', 'col'],
+      data() {
+        return {
+          isSelected: false,
+        };
+      },
+      computed: {
+        matched() {
+          return this.color === null;
+        },
+      },
+      methods: {
+        selectSquare() {
+          if (!this.isSelected && !this.matched) {
+            this.$emit("select", this.row, this.col, this.color);
+            this.isSelected = true;
+          }
+        },
+        resetSelection() {
+          this.isSelected = false;
+        },
+      },
+      watch: {
+        color() {
+          // Reset selection if the color changes (no match)
+          this.resetSelection();
+        },
+      },
+      template: `
+        <div
+          @click="selectSquare"
+          :style="{ backgroundColor: isSelected ? color : 'gray' }"
+          class="memory-square"
+        ></div>
+      `,
+    };
+
+    // GameBoard component
+    const GameBoard = {
+      data() {
+        return {
+          matrix: [
+            ["red", "blue", "green", "yellow"],
+            ["yellow", "green", "blue", "red"],
+            ["orange", "purple", "pink", "brown"],
+            ["brown", "pink", "purple", "orange"],
+          ],
+          selectedSquares: [],
+          canSelect: true,
+        };
+      },
+      methods: {
+        handleSquareSelect(row, col, color) {
+          if (this.canSelect) {
+            this.selectedSquares.push({
+              row,
+              col,
+              color
+            });
+
+            if (this.selectedSquares.length === 2) {
+              this.canSelect = false;
+              this.checkMatch();
+            }
+          }
+        },
+        checkMatch() {
+          const [square1, square2] = this.selectedSquares;
+
+          if (square1.color === square2.color) {
+            // Match found
+            this.removeSquares(square1, square2);
+          } else {
+            // No match, flip back the squares after a delay
+            setTimeout(() => {
+              this.selectedSquares.forEach(square => {
+                this.$set(this.matrix[square.row], square.col, null);
+              });
+              this.selectedSquares = [];
+              this.canSelect = true;
+            }, 1000);
+          }
+        },
+        removeSquares(square1, square2) {
+          // Remove matched squares from the matrix
+          this.$set(this.matrix[square1.row], square1.col, null);
+          this.$set(this.matrix[square2.row], square2.col, null);
+
+          this.selectedSquares = [];
+          this.canSelect = true;
+
+          // Check for game completion
+          if (this.isGameComplete()) {
+            alert("Congratulations! You've won!");
+          }
+        },
+        isGameComplete() {
+          // Check if all squares are matched
+          return this.matrix.every((row) => row.every((square) => square === null));
+        },
+      },
+      components: {
+        MemorySquare,
+      },
+      template: `
+        <div>
+          <div v-for="(row, rowIndex) in matrix" :key="rowIndex" class="row">
+            <div v-for="(color, colIndex) in row" :key="colIndex">
+              <memory-square
+                :color="color"
+                :row="rowIndex"
+                :col="colIndex"
+                @select="handleSquareSelect"
+              ></memory-square>
+            </div>
+          </div>
+        </div>
+      `,
+    };
+
+    // Vue app instance
+    const app = Vue.createApp({
+      components: {
+        MemorySquare,
+        GameBoard,
+      },
+    });
+
+    // Mount the app
+    app.mount('#app');
+  </script>
+
+  <style>
+    .row {
+      display: flex;
+    }
+
+    .memory-square {
+      width: 80px;
+      height: 80px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+
+</body>
+
+</html>
