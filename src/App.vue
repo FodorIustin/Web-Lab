@@ -1,15 +1,15 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-export default {
-  // No need to import and register the Button component here
-};
+<script setup>
+import ToDoView from './components/ToDoView.vue';
 </script>
 
-<style>
-/* Your styles go here */
+<template>
+  <header>
+    <h1>My first TODO list in Vue.js</h1>
+  </header>
+  <main>
+    <ToDoView></ToDoView>
+  </main>
+</template>
+
+<style scoped>
 </style>
