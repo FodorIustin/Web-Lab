@@ -1,22 +1,10 @@
 {
-  "name": "test2",
-  "private": true,
-  "version": "0.0.0",
+  "name": "app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
   "dependencies": {
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "vue": "^3.3.11",
-    "vue-router": "^4.2.5"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
-    "vite": "^5.0.8"
+    "axios": "^1.6.8"
   }
 }
