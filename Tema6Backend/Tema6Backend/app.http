@@ -1,0 +1,12 @@
+@mainUrl = http://localhost:3000
+###
+#
+GET {{mainUrl}}/products
+###
+#
+POST {{mainUrl}}/products
+###
+#
+DELETE {{mainUrl}}/products
+###
+#
